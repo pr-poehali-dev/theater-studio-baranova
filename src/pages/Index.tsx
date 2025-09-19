@@ -27,14 +27,14 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 bg-theater-navy/95 backdrop-blur-sm border-b border-theater-purple/20 z-50">
+      <nav className="fixed top-0 left-0 right-0 bg-theater-black/95 backdrop-blur-sm border-b border-theater-yellow/20 z-50">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center space-x-3">
-              <Icon name="Drama" className="text-theater-gold" size={32} />
+              <Icon name="Drama" className="text-theater-yellow" size={32} />
               <div>
-                <h1 className="text-xl font-bold text-theater-gold">Театральная мастерская</h1>
-                <p className="text-sm text-theater-purple">Оксаны Барановой</p>
+                <h1 className="text-xl font-bold text-theater-yellow">Театральная мастерская</h1>
+                <p className="text-sm text-theater-white">Оксаны Барановой</p>
               </div>
             </div>
             
@@ -46,7 +46,7 @@ export default function Index() {
                   className={`flex items-center space-x-2 px-3 py-2 rounded-lg transition-colors ${
                     activeSection === item.id 
                       ? 'bg-primary text-primary-foreground' 
-                      : 'text-foreground hover:bg-theater-purple/20'
+                      : 'text-foreground hover:bg-theater-yellow/20'
                   }`}
                 >
                   <Icon name={item.icon} size={18} />
@@ -59,24 +59,29 @@ export default function Index() {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="pt-20 pb-16 bg-gradient-to-br from-theater-navy via-theater-dark to-background">
+      <section id="home" className="pt-20 pb-16 bg-gradient-to-br from-theater-black via-theater-gray to-background">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="flex-1 text-center lg:text-left">
-              <h1 className="text-5xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-theater-gold to-theater-purple bg-clip-text text-transparent">
-                Театральная мастерская
-              </h1>
-              <h2 className="text-2xl lg:text-3xl text-theater-purple mb-8">
-                Оксаны Барановой
-              </h2>
+              <div className="mb-6">
+                <h1 className="text-5xl lg:text-7xl font-bold mb-4 text-theater-white">
+                  Театральная мастерская
+                </h1>
+                <h2 className="text-2xl lg:text-3xl text-theater-yellow mb-6">
+                  Оксаны Барановой
+                </h2>
+                <div className="text-3xl lg:text-4xl font-bold text-theater-yellow mb-8">
+                  ✨ Трансформация театром
+                </div>
+              </div>
               <p className="text-lg text-muted-foreground mb-8 max-w-2xl">
-                Развиваем актёрское мастерство, движение, речь и уверенность в себе
+                Мы приглашаем вас для знакомства с собой – с человеком, который даже не подозревал о наличии столь большого творческого потенциала у самого себя.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold">
                   Записаться на занятие
                 </Button>
-                <Button variant="outline" size="lg" className="border-theater-purple text-theater-purple hover:bg-theater-purple/10">
+                <Button variant="outline" size="lg" className="border-theater-yellow text-theater-yellow hover:bg-theater-yellow/10">
                   Узнать больше
                 </Button>
               </div>
@@ -92,24 +97,24 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Направления обучения */}
+      {/* Трансформация через театр */}
       <section className="py-16 bg-card">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12">Направления обучения</h2>
+          <h2 className="text-4xl font-bold text-center mb-12">Трансформация через театр</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { icon: 'Activity', title: 'Движение', subtitle: 'От 10 лет', description: 'Пластика тела, координация, выразительность движений' },
-              { icon: 'Mic', title: 'Речь', subtitle: 'От 8 лет', description: 'Дикция, интонации, работа с текстом' },
-              { icon: 'Heart', title: 'Чувства', subtitle: 'От 12 лет', description: 'Эмоциональная выразительность, работа с переживаниями' },
-              { icon: 'Sparkles', title: 'Вера в себя', subtitle: 'Для всех', description: 'Уверенность на сцене, преодоление страхов' }
+              { icon: 'Activity', title: 'Движение', subtitle: 'Свобода тела', description: 'Пластика, координация, выразительность и раскрепощение' },
+              { icon: 'Mic', title: 'Речь', subtitle: 'Сила голоса', description: 'Дикция, интонации, умение быть услышанным' },
+              { icon: 'Heart', title: 'Чувства', subtitle: 'Эмоциональный интеллект', description: 'Выражение и управление эмоциями, искренность' },
+              { icon: 'Sparkles', title: 'Вера в себя', subtitle: 'Внутренняя сила', description: 'Уверенность, харизма, лидерские качества' }
             ].map((item, index) => (
-              <Card key={index} className="text-center hover:scale-105 transition-transform duration-300">
+              <Card key={index} className="text-center hover:scale-105 transition-transform duration-300 bg-theater-gray border-theater-yellow/20">
                 <CardContent className="p-6">
-                  <div className="w-16 h-16 bg-theater-purple/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Icon name={item.icon} size={32} className="text-theater-purple" />
+                  <div className="w-16 h-16 bg-theater-yellow/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Icon name={item.icon} size={32} className="text-theater-yellow" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                  <p className="text-theater-gold text-sm font-medium mb-3">{item.subtitle}</p>
+                  <h3 className="text-xl font-semibold mb-2 text-theater-white">{item.title}</h3>
+                  <p className="text-theater-yellow text-sm font-medium mb-3">{item.subtitle}</p>
                   <p className="text-muted-foreground text-sm">{item.description}</p>
                 </CardContent>
               </Card>
@@ -122,272 +127,147 @@ export default function Index() {
       <section id="groups" className="py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-12">Наши группы</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="overflow-hidden hover:shadow-xl transition-shadow duration-300">
-              <div className="h-48 bg-gradient-to-br from-theater-purple/20 to-theater-gold/20 flex items-center justify-center">
-                <Icon name="BookOpen" size={64} className="text-theater-purple" />
+          <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
+            <Card className="overflow-hidden hover:shadow-xl transition-shadow duration-300 bg-theater-gray border-theater-yellow/20">
+              <div className="h-48 bg-gradient-to-br from-theater-yellow/20 to-theater-yellow/40 flex items-center justify-center">
+                <div className="text-6xl">🎭</div>
               </div>
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-2 text-theater-gold">Арлекино</h3>
-                <p className="text-muted-foreground mb-4">Развиваем творческие способности и уверенность в себе</p>
-                <div className="space-y-2 text-sm">
-                  <div className="flex items-center gap-2">
-                    <Icon name="Users" size={16} className="text-theater-purple" />
-                    <span>Возраст: 10-15 лет</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Icon name="Clock" size={16} className="text-theater-purple" />
-                    <span>Суббота 10:00-12:00</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Icon name="Wallet" size={16} className="text-theater-purple" />
-                    <span className="font-semibold text-theater-gold">3000₽/месяц</span>
+                <h3 className="text-2xl font-semibold mb-2 text-theater-yellow">🎯 Арлекино</h3>
+                <p className="text-theater-white mb-2 font-medium">Дети 10–15 лет</p>
+                <p className="text-muted-foreground mb-4 text-sm">Уверенный, творческий, открытый подросток</p>
+                
+                <div className="space-y-3 text-sm mb-4">
+                  <div className="bg-theater-black/50 p-3 rounded">
+                    <h4 className="font-semibold text-theater-yellow mb-2">Результат:</h4>
+                    <ul className="space-y-1 text-muted-foreground">
+                      <li>• Уверенность среди сверстников и на сцене</li>
+                      <li>• Красивая, ясная речь</li>
+                      <li>• Умение выражать эмоции</li>
+                      <li>• Радость от выступлений</li>
+                      <li>• Командная работа и дружба</li>
+                    </ul>
                   </div>
                 </div>
-                <Button className="w-full mt-4" variant="outline">Записаться</Button>
+                <Button className="w-full mt-4 bg-theater-yellow text-theater-black hover:bg-theater-yellow/90">Записаться</Button>
               </CardContent>
             </Card>
 
-            <Card className="overflow-hidden hover:shadow-xl transition-shadow duration-300">
-              <div className="h-48 bg-gradient-to-br from-theater-red/20 to-theater-purple/20 flex items-center justify-center">
-                <Icon name="Zap" size={64} className="text-theater-red" />
+            <Card className="overflow-hidden hover:shadow-xl transition-shadow duration-300 bg-theater-gray border-theater-yellow/20">
+              <div className="h-48 bg-gradient-to-br from-theater-yellow/20 to-theater-yellow/40 flex items-center justify-center">
+                <div className="text-6xl">⚡</div>
               </div>
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-2 text-theater-red">Движ</h3>
-                <p className="text-muted-foreground mb-4">Актерское мастерство и эмоциональная выразительность</p>
-                <div className="space-y-2 text-sm">
-                  <div className="flex items-center gap-2">
-                    <Icon name="Users" size={16} className="text-theater-red" />
-                    <span>Возраст: 15-21 год</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Icon name="Clock" size={16} className="text-theater-red" />
-                    <span>Воскресенье 14:00-16:00</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Icon name="Wallet" size={16} className="text-theater-red" />
-                    <span className="font-semibold text-theater-gold">3500₽/месяц</span>
+                <h3 className="text-2xl font-semibold mb-2 text-theater-yellow">🎯 Импульс</h3>
+                <p className="text-theater-white mb-2 font-medium">Подростки 16–20 лет</p>
+                <p className="text-muted-foreground mb-4 text-sm">Смелость заявлять о себе</p>
+                
+                <div className="space-y-3 text-sm mb-4">
+                  <div className="bg-theater-black/50 p-3 rounded">
+                    <h4 className="font-semibold text-theater-yellow mb-2">Результат:</h4>
+                    <ul className="space-y-1 text-muted-foreground">
+                      <li>• Уверенность и свобода самовыражения</li>
+                      <li>• Навыки выступления перед публикой</li>
+                      <li>• Развитие харизмы и артистичности</li>
+                      <li>• Возможности в театре, кино, блогинге</li>
+                      <li>• Инструмент для будущей профессии</li>
+                    </ul>
                   </div>
                 </div>
-                <Button className="w-full mt-4" variant="outline">Записаться</Button>
+                <Button className="w-full mt-4 bg-theater-yellow text-theater-black hover:bg-theater-yellow/90">Записаться</Button>
               </CardContent>
             </Card>
 
-            <Card className="overflow-hidden hover:shadow-xl transition-shadow duration-300">
-              <div className="h-48 bg-gradient-to-br from-theater-gold/20 to-theater-purple/20 flex items-center justify-center">
-                <Icon name="Trophy" size={64} className="text-theater-gold" />
+            <Card className="overflow-hidden hover:shadow-xl transition-shadow duration-300 bg-theater-gray border-theater-yellow/20">
+              <div className="h-48 bg-gradient-to-br from-theater-yellow/20 to-theater-yellow/40 flex items-center justify-center">
+                <div className="text-6xl">👑</div>
               </div>
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-2 text-theater-gold">Браво</h3>
-                <p className="text-muted-foreground mb-4">Профессиональное развитие и глубокая работа с ролью</p>
-                <div className="space-y-2 text-sm">
-                  <div className="flex items-center gap-2">
-                    <Icon name="Users" size={16} className="text-theater-gold" />
-                    <span>Возраст: 21+ лет</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Icon name="Clock" size={16} className="text-theater-gold" />
-                    <span>Среда 19:00-21:00</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Icon name="Wallet" size={16} className="text-theater-gold" />
-                    <span className="font-semibold text-theater-gold">4000₽/месяц</span>
+                <h3 className="text-2xl font-semibold mb-2 text-theater-yellow">🎯 Браво</h3>
+                <p className="text-theater-white mb-2 font-medium">Взрослые 21+</p>
+                <p className="text-muted-foreground mb-4 text-sm">Лидер, к которому прислушиваются</p>
+                
+                <div className="space-y-3 text-sm mb-4">
+                  <div className="bg-theater-black/50 p-3 rounded">
+                    <h4 className="font-semibold text-theater-yellow mb-2">Результат:</h4>
+                    <ul className="space-y-1 text-muted-foreground">
+                      <li>• Навыки оратора и самопрезентации</li>
+                      <li>• Поставленный голос и речь</li>
+                      <li>• Управление эмоциями в стрессе</li>
+                      <li>• Лидерские качества</li>
+                      <li>• Успех в профессии и жизни</li>
+                    </ul>
                   </div>
                 </div>
-                <Button className="w-full mt-4" variant="outline">Записаться</Button>
+                <Button className="w-full mt-4 bg-theater-yellow text-theater-black hover:bg-theater-yellow/90">Записаться</Button>
               </CardContent>
             </Card>
           </div>
         </div>
       </section>
 
-      {/* О нас */}
+      {/* Главное */}
       <section className="py-16 bg-card">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12">О нас</h2>
-          <div className="max-w-4xl mx-auto space-y-8">
-            <div className="text-center">
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                ТМ Оксаны Барановой - это пространство для тех, кто хочет познать себя, раскрыть свой потенциал и свой талант, 
-                найти единомышленников, самосовершенствоваться и, возможно, даже изменить мировоззрение.
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl font-bold mb-8">Самое главное</h2>
+            <div className="bg-theater-yellow/10 border border-theater-yellow/20 rounded-2xl p-8">
+              <p className="text-2xl text-theater-yellow font-bold mb-4">
+                Каждый участник театральной мастерской учится верить в себя и не бояться пробовать новое.
+              </p>
+              <p className="text-lg text-muted-foreground">
+                Это ключ к трансформации, который открывает двери к новой версии себя – более уверенной, яркой и творческой.
               </p>
             </div>
-            
-            <div className="grid md:grid-cols-2 gap-8">
-              <Card className="p-6">
-                <div className="flex items-center gap-4 mb-4">
-                  <Icon name="Target" className="text-theater-purple" size={32} />
-                  <h3 className="text-xl font-semibold">Авторская методика</h3>
-                </div>
-                <p className="text-muted-foreground">
-                  Тренинги и упражнения с индивидуальным подходом по методике «Поверь в себя. Движение. Чувства. Речь», 
-                  основанной на работах величайших режиссеров.
-                </p>
-              </Card>
-              
-              <Card className="p-6">
-                <div className="flex items-center gap-4 mb-4">
-                  <Icon name="Users" className="text-theater-gold" size={32} />
-                  <h3 className="text-xl font-semibold">Театр для себя</h3>
-                </div>
-                <p className="text-muted-foreground">
-                  Мы приглашаем вас для знакомства с собой - с человеком, который даже не подозревал о наличии 
-                  столь большого творческого потенциала у самого себя.
-                </p>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Занятия и группы */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12">О занятиях и группах</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <Card className="p-6">
-              <div className="flex items-center gap-4 mb-4">
-                <Icon name="BookOpen" className="text-theater-purple" size={32} />
-                <h3 className="text-xl font-semibold">Студия чтеца</h3>
-              </div>
-              <p className="text-muted-foreground mb-4">Дети от 4 до 9 лет</p>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>• Актерское мастерство</li>
-                <li>• Сценическая речь</li>
-                <li>• Сценическое движение</li>
-                <li>• Продолжительность: октябрь - май</li>
-                <li>• Занятия: 2 раза в неделю</li>
-              </ul>
-            </Card>
-            
-            <Card className="p-6">
-              <div className="flex items-center gap-4 mb-4">
-                <Icon name="Music" className="text-theater-gold" size={32} />
-                <h3 className="text-xl font-semibold">Школа мюзикла</h3>
-              </div>
-              <p className="text-muted-foreground mb-4">Дети от 10 до 17 лет, взрослые от 18 до 85 лет</p>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>• Актерское мастерство</li>
-                <li>• Вокал</li>
-                <li>• Танец</li>
-                <li>• Занятия: 2 раза в неделю по 1 часу</li>
-              </ul>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Наши постановки */}
-      <section className="py-16 bg-card">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12">Наши постановки</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              'Кошкин дом',
-              'Апрель 45',
-              'Бременские немузыканты или 25 лет в бутоне',
-              'Остановившие фашизм'
-            ].map((title, index) => (
-              <Card key={index} className="overflow-hidden hover:scale-105 transition-transform duration-300">
-                <div className="h-48 bg-gradient-to-br from-theater-purple/20 to-theater-red/20 flex items-center justify-center">
-                  <Icon name="Video" size={48} className="text-theater-purple" />
-                </div>
-                <CardContent className="p-4">
-                  <h3 className="font-semibold text-center">{title}</h3>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* О результатах */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12">О результатах</h2>
-          <div className="max-w-4xl mx-auto space-y-8">
-            <div className="grid md:grid-cols-2 gap-8">
-              <Card className="p-6">
-                <h3 className="text-xl font-semibold mb-4 text-theater-purple">Литературно-музыкальная композиция</h3>
-                <p className="text-muted-foreground mb-4">Для студии чтеца</p>
-                <p className="text-sm text-muted-foreground">
-                  Театральное представление на основе поэтического слова, музыки, танца и пластики. 
-                  Развивает речь, эмоциональный интеллект, творческое самочувствие.
-                </p>
-              </Card>
-              
-              <Card className="p-6">
-                <h3 className="text-xl font-semibold mb-4 text-theater-gold">Мюзикл</h3>
-                <p className="text-muted-foreground mb-4">Для школы мюзикла</p>
-                <p className="text-sm text-muted-foreground">
-                  Музыкально-сценическое произведение с вокалом, танцами и монологами. 
-                  Помогает быть легче в отношениях и ярче воспринимать жизнь.
-                </p>
-              </Card>
-            </div>
-            
-            <Card className="p-6 text-center">
-              <h3 className="text-xl font-semibold mb-4">Что дают занятия</h3>
-              <div className="grid md:grid-cols-3 gap-4 text-sm">
-                <div>
-                  <Icon name="Volume2" className="text-theater-purple mx-auto mb-2" size={24} />
-                  <p>Четкая дикция и интонирование</p>
-                </div>
-                <div>
-                  <Icon name="Shield" className="text-theater-gold mx-auto mb-2" size={24} />
-                  <p>Отсутствие страхов и зажимов</p>
-                </div>
-                <div>
-                  <Icon name="Sparkles" className="text-theater-red mx-auto mb-2" size={24} />
-                  <p>Развитие воображения и фантазии</p>
-                </div>
-              </div>
-            </Card>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer id="contacts" className="bg-theater-navy text-foreground py-12">
+      <footer id="contacts" className="bg-theater-black text-foreground py-12">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8">
             <div>
               <div className="flex items-center space-x-3 mb-4">
-                <Icon name="Drama" className="text-theater-gold" size={32} />
-                <h3 className="text-xl font-bold text-theater-gold">Театральная мастерская</h3>
+                <Icon name="Drama" className="text-theater-yellow" size={32} />
+                <h3 className="text-xl font-bold text-theater-yellow">Театральная мастерская</h3>
               </div>
               <p className="text-muted-foreground">
-                Пространство для раскрытия творческого потенциала и самосовершенствования
+                Трансформация через театр. Раскрытие творческого потенциала.
               </p>
             </div>
             
             <div>
-              <h4 className="font-semibold mb-4">Контакты</h4>
+              <h4 className="font-semibold mb-4 text-theater-yellow">Контакты</h4>
               <div className="space-y-2">
                 <div className="flex items-center gap-2">
-                  <Icon name="Phone" size={16} className="text-theater-purple" />
-                  <span>+7 (999) 123-45-67</span>
+                  <Icon name="Phone" size={16} className="text-theater-yellow" />
+                  <span>+7 977 108 60 00 (Михаил)</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Icon name="Mail" size={16} className="text-theater-purple" />
-                  <span>info@baranova-theater.ru</span>
+                  <Icon name="Phone" size={16} className="text-theater-yellow" />
+                  <span>+7 977 148 60 00 (Оксана)</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Icon name="MapPin" size={16} className="text-theater-purple" />
-                  <span>г. Москва, ул. Театральная, 15</span>
+                  <Icon name="Building" size={16} className="text-theater-yellow" />
+                  <span>ООО «КС «Браво»</span>
                 </div>
               </div>
             </div>
             
             <div>
-              <h4 className="font-semibold mb-4">Подать заявку</h4>
-              <Button className="w-full bg-primary hover:bg-primary/90">
+              <h4 className="font-semibold mb-4 text-theater-yellow">Подать заявку</h4>
+              <Button className="w-full bg-theater-yellow text-theater-black hover:bg-theater-yellow/90 mb-4">
                 Записаться на занятие
               </Button>
+              <p className="text-xs text-muted-foreground">
+                ИНН: 9102287366<br/>
+                ОГРН: 1239100001777
+              </p>
             </div>
           </div>
           
-          <div className="border-t border-theater-purple/20 mt-8 pt-8 text-center">
+          <div className="border-t border-theater-yellow/20 mt-8 pt-8 text-center">
             <p className="text-muted-foreground">
               © 2024 Театральная мастерская Оксаны Барановой. Все права защищены.
             </p>

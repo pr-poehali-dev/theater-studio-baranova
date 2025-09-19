@@ -63,12 +63,12 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				theater: {
-					dark: '#16213E',
-					navy: '#1A1F2C',
-					purple: '#9b87f5',
-					red: '#E94560',
-					gold: '#FFC107',
-					'dark-purple': '#7E69AB'
+					black: '#0A0A0A',
+					white: '#FAFAFA',
+					yellow: '#FFD700',
+					'yellow-bright': '#FFEB3B',
+					gray: '#1A1A1A',
+					'gray-light': '#2A2A2A'
 				}
 			},
 			borderRadius: {
